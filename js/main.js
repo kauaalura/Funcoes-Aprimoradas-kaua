@@ -1,5 +1,5 @@
-import { aleatorio } from "./aleatorio";
-import { perguntas } from "./perguntas";
+import { aleatorio } from "./aleatorio.js";
+import { perguntas } from "./perguntas.js";
 
 
 const caixaPrincipal = document.querySelector(".caixa-principal");
@@ -7,6 +7,7 @@ const caixaPerguntas = document.querySelector(".caixa-perguntas");
 const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
+const botaoJogarNovamante = document.querySelector (".novamente-btn")
 
 let atual = 0;
 let perguntaAtual;
@@ -43,8 +44,13 @@ function mostraResultado(){
     caixaPerguntas.textContent = "Sua jornada foi!";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
+    botaoJogarNovamante.addEventListener("click , jogarNovamente")
 }
 
-
+function jogarNovamente() {
+    atual = 0;
+    historiaFinal = "";
+    mostraPergunta();
+    }
 
    mostraPergunta();
